@@ -1,1 +1,55 @@
-<h1>News Page!</h1>
+<section>
+    <nav>
+        <div class="navName">
+            <a href="#">Mongo Scraper</a> |
+        </div>
+        <div class="navLink">
+            <a href="#">Home</a> |
+            <a href="#">Saved Articles</a> |
+            <a href="#">Scrape New Articles</a>
+        </div>
+    </nav>
+</section>
+<section class="body">
+    <div class="box">
+        <h1>Scaped Articles</h1>
+        <br>
+        <br>
+        <ul>
+        {{#each infos}}
+            <li>
+                <div class=" articles">
+                    <div class="article">
+                        <a class="article-link" data-id={{_id}} data-link={{link}} href={{link}}><p class="article-title" data-title={{title}}>{{title}}</p></a>
+                        <div class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                               
+                                    <div class="modaslHeade"><h2>Note For Article: </h2></div>
+                                    <div class="modalHeade"><h2>Add a Note</h2></div>
+                                    <label>Title</label>
+                                    <br>
+                                    <input type="text" class="titles"  placeholder="Title">
+                                    <br>
+                                    <label>Note</label>
+                                    <br>
+                                    <textarea class="notes" placeholder="note" ></textarea>
+                                    <br>
+                                    <button class="submit">Submit</button>
+                            
+                            </div>
+                        </div> 
+                    </div>
+                    
+                    <div class="articleHandler">
+                        <button data-id={{_id}} data-link={{link}} class="note">Articles Notes</button>
+                        <button class="delete">Delete From Saved</button>
+                    </div>
+                
+                </div>
+            </li>
+        {{/each}}
+        </ul>
+    </div>
+
+</section>
