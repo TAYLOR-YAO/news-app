@@ -5,7 +5,7 @@
         </div>
         <div class="navLink">
             <a href="#">Home</a> |
-            <a href="#">Saved Articles</a> |
+            <a class="save" href="http://localhost:5000">Saved Articles</a> |
             <a href="#">Scrape New Articles</a>
         </div>
     </nav>
@@ -21,24 +21,6 @@
                 <div class=" articles">
                     <div class="article">
                         <a class="article-link" data-id={{_id}} data-link={{link}} href={{link}}><p class="article-title" data-title={{title}}>{{title}}</p></a>
-                        <div class="modal">
-                            <div class="modal-content">
-                                <span class="close">&times;</span>
-                               
-                                    <div class="modaslHeade"><h2>Note For Article: </h2></div>
-                                    <div class="modalHeade"><h2>Add a Note</h2></div>
-                                    <label>Title</label>
-                                    <br>
-                                    <input type="text" class="titles"  placeholder="Title">
-                                    <br>
-                                    <label>Note</label>
-                                    <br>
-                                    <textarea class="notes" placeholder="note" ></textarea>
-                                    <br>
-                                    <button class="submit">Submit</button>
-                            
-                            </div>
-                        </div> 
                     </div>
                     
                     <div class="articleHandler">
@@ -51,5 +33,21 @@
         {{/each}}
         </ul>
     </div>
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+                <div class="modaslHeade" ><h2 id="noteId">{{_id}}</h2></div>
+                <div class="modalHeade"><h2>Add a Note</h2></div>
+                <label>Title</label>
+                <br>
+                <input type="text" class="titles"  placeholder="Title">
+                <br>
+                <label>Note</label>
+                <br>
+                <textarea class="notes" placeholder="note" ></textarea>
+                <br>
+                <button class="submit">Submit</button>
+        </div>
+    </div> 
 
 </section>
