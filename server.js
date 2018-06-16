@@ -14,8 +14,8 @@ app.set("view engine", "handlebars");
 
 require("./routes/api-routes")(app);
 require("./routes/html-route")(app);
-
-mongoose.connect('mongodb://localhost/news_db', function (err) {
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/news_db';
+mongoose.connect(mongoURI, function (err) {
    if (err) throw err;
    console.log('Successfully connected');
 });
